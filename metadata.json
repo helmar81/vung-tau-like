@@ -1,0 +1,7 @@
+{
+  "name": "Vung Tau Like",
+  "description": "A high-performance PWA for discovering the beautiful coastal town of Vung Tau, Vietnam. Featuring AI-powered travel recommendations and local guides.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
