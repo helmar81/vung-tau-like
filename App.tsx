@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {  Routes, Route, useNavigate, useLocation, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation, BrowserRouter } from 'react-router-dom';
 import { Language, Translation } from './types';
 import { TRANSLATIONS } from './constants';
 import { Home } from './pages/Home';
@@ -10,6 +10,7 @@ import { PlaceDetail } from './pages/PlaceDetail';
 import { GetStarted } from './pages/GetStarted';
 import { BottomNav } from './components/BottomNav';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
+import { ToDo } from './components/ToDo';
 
 const AppContent: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
@@ -28,7 +29,7 @@ const AppContent: React.FC = () => {
 
   const isDetailView = location.pathname.startsWith('/details/') || location.pathname === '/get-started';
   
-  // NEW: Check if current page is the starter page
+  // Check if current page is the starter page
   const isHomePage = location.pathname === '/';
 
   return (
@@ -66,13 +67,9 @@ const AppContent: React.FC = () => {
         <Route path="/guide/:categoryType" element={<CategoryList t={t} lang={lang} />} />
         <Route path="/details/:placeId" element={<PlaceDetail lang={lang} t={t} />} />
         <Route path="/ai" element={<AIChat t={t} lang={lang} />} />
-        <Route path="/todo" element={
-          <div className="pt-32 px-6 h-screen flex items-center justify-center flex-col text-center">
-            <i className="fas fa-hammer text-4xl text-sunset mb-4"></i>
-            <h2 className="text-2xl font-bold">Coming Soon</h2>
-            <p className="text-gray-500 mt-2">The "Things to Do" module is currently being built with localized experiences.</p>
-          </div>
-        } />
+        
+        {/* Corrected Line below: */}
+        <Route path="/todo" element={<ToDo t={t} lang={lang} />} />
       </Routes>
 
       {/* Persistent Bottom Navigation */}

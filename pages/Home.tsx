@@ -33,7 +33,7 @@ export const Home: React.FC<HomeProps> = ({ t, lang, onViewDetails }) => {
       {/* Hero Section */}
       <div className="relative h-[70vh] w-full overflow-hidden flex items-end pb-20 px-6 bg-deep">
         <img 
-          src="./anh.jpeg" 
+          src="./vt.webp" 
           className="absolute inset-0 w-full h-full object-cover opacity-80"
           alt="Vung Tau Coastline"
           loading="eager"
@@ -120,6 +120,10 @@ export const Home: React.FC<HomeProps> = ({ t, lang, onViewDetails }) => {
           ))}
         </div>
       </div>
-    </div>
+
+       
+        </div>
+      
+  
   );
 };

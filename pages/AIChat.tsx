@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Translation, Language } from '../types';
 import { gemini } from '../services/gemini';
@@ -38,6 +37,22 @@ export const AIChat: React.FC<AIChatProps> = ({ t, lang }) => {
   return (
     <div className="pt-24 h-screen flex flex-col bg-sandy">
       <div className="flex-1 overflow-y-auto px-6 space-y-4 pb-32 pt-4 no-scrollbar">
+        
+        {/* --- VIDEO SECTION START --- */}
+        <div className="w-full mb-6 bg-white p-2 rounded-[2rem] shadow-sm border border-gray-100">
+          <div className="relative w-full aspect-video rounded-[1.5rem] overflow-hidden bg-black">
+            <iframe 
+              className="absolute top-0 left-0 w-full h-full"
+              // REPLACE THE URL BELOW WITH YOUR VIDEO ID
+              src="https://www.youtube.com/embed/Ff-y6HX16kg?si=tP5ex1aL0a7OHKuX" 
+              title="Vung Tau Intro Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+        {/* --- VIDEO SECTION END --- */}
+
         {messages.map((msg, idx) => (
           <div key={idx} className={`flex ${msg.isBot ? 'justify-start' : 'justify-end'}`}>
             <div className={`max-w-[85%] p-4 rounded-2xl ${

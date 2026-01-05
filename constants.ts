@@ -1,5 +1,58 @@
 
-import { Place, Category, Translation } from './types';
+
+
+// Import the new Activity type
+import { Place, Category, Translation, Activity } from './types'; 
+
+// ... (keep your existing CATEGORIES and PLACES arrays) ...
+
+// Add this new array at the bottom
+export const ACTIVITIES: Activity[] = [
+  {
+    id: 'a1',
+    title: 'Hike to the Lighthouse',
+    description: {
+      en: 'A scenic walk up Nho Mountain to the historic lighthouse. Best done in the early morning.',
+      vi: 'Đi bộ lên núi Nhỏ để ngắm hải đăng lịch sử. Nên đi vào sáng sớm.'
+    },
+    image: './walk.webp',
+    duration: '1-2 hours',
+    location: 'Nho Mountain'
+  },
+  {
+    id: 'a2',
+    title: 'Kitesurfing Lesson',
+    description: {
+      en: 'Learn to kitesurf at Back Beach, one of the best spots in Vietnam for wind sports.',
+      vi: 'Học lướt ván diều tại Bãi Sau, một trong những điểm tốt nhất Việt Nam cho các môn thể thao gió.'
+    },
+    image: './surf.webp',
+    duration: '3 hours',
+    location: 'Back Beach'
+  },
+  {
+    id: 'a3',
+    title: 'Sunset at Front Beach',
+    description: {
+      en: 'Relax in the park or rent a bicycle to watch the sun go down over the ocean.',
+      vi: 'Thư giãn trong công viên hoặc thuê xe đạp để ngắm hoàng hôn trên biển.'
+    },
+   image: './sunset.webp',
+    duration: '1 hour',
+    location: 'Front Beach Park'
+  },
+  {
+    id: 'a4',
+    title: 'Visit the Pig Hill (Doi Con Heo)',
+    description: {
+      en: 'A rugged, rocky hill offering raw and panoramic views of Back Beach.',
+      vi: 'Một ngọn đồi đá hoang sơ mang lại tầm nhìn toàn cảnh ra Bãi Sau.'
+    },
+    image: './vt.webp',
+    duration: '45 mins',
+    location: 'Bai Sau Area'
+  }
+];
 
 export const CATEGORIES: Category[] = [
   {
@@ -39,6 +92,9 @@ export const PLACES: Place[] = [
     address: '03 Tran Phu, Ward 5, Vung Tau',
     image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=800',
     rating: 4.5,
+
+    phoneNumber: '0254 355 0909',
+    openingHours: '10:00 - 23:00',
     coordinates: { lat: 10.358, lng: 107.065 }
   },
   {
@@ -52,7 +108,10 @@ export const PLACES: Place[] = [
     address: '66 Ha Long, Ward 2, Vung Tau',
     image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800',
     rating: 4.8,
-    coordinates: { lat: 10.334, lng: 107.078 }
+
+    phoneNumber: '0254 355 0909',
+    openingHours: '10:00 - 23:00',
+    coordinates: { lat: 10.33028793334961, lng: 107.07640838623047 }
   },
   {
     id: 'p3',
@@ -65,6 +124,9 @@ export const PLACES: Place[] = [
     address: 'Thuy Van, Ward 2, Vung Tau',
    image: '/hung.jpeg',
     rating: 4.7,
+
+    phoneNumber: '0254 355 0909',
+    openingHours: '10:00 - 23:00',
     coordinates: { lat: 10.327, lng: 107.084 }
   },
   {
@@ -76,23 +138,30 @@ export const PLACES: Place[] = [
       vi: 'Hải đăng lịch sử được xây dựng vào năm 1862, là một cột mốc mang đậm tính biểu tượng.'
     },
     address: 'Nho Mountain, Vung Tau',
-    image: '/t.jpg',
+    image: '/thu.webp',
     rating: 4.6,
+
+    phoneNumber: '0254 355 0909',
+    openingHours: '10:00 - 23:00',
     coordinates: { lat: 10.332, lng: 107.075 }
   },
 
  {
     id: 'p5',
-    name: 'Vung Tau Lighthouse',
+    name: 'Wellness Homes ',
     category: 'massage',
     description: {
-      en: 'Historic lighthouse built in 1862, providing an iconic landmark and historic feel.',
-      vi: 'Hải đăng lịch sử được xây dựng vào năm 1862, là một cột mốc mang đậm tính biểu tượng.'
+      en: 'Wellness Homes was born from a passion to help communities live healthy, peaceful, and happy lives through natural, drug-free therapies.',
+      vi: ' Wellness Homes ra đời từ tâm huyết giúp cộng đồng sống khỏe mạnh, an yên và hạnh phúc bằng các liệu pháp tự nhiên, không dùng thuốc.'
     },
-    address: 'Wellne',
-    image: '/dance.webp',
+    address: 'Villa B4 đường Thùy Dương 3, Phường Rạch',
+    image: '/WellnessHomes.jpg',
     rating: 4.6,
-    coordinates: { lat: 10.332, lng: 107.075 }
+
+    phoneNumber: '0254 355 0909',
+    openingHours: '10:00 - 23:00',
+   
+    coordinates: { lat: 10.3802043, lng: 107.091439 }
   },
 
 
@@ -106,12 +175,108 @@ export const PLACES: Place[] = [
       en: 'Historic lighthouse built in 1862, providing an iconic landmark and historic feel.',
       vi: 'Hải đăng lịch sử được xây dựng vào năm 1862, là một cột mốc mang đậm tính biểu tượng.'
     },
-    address: 'Wellne',
+    address: 'Phan Chu Thrin',
     image: '/n.jpg',
     rating: 4.6,
+
+    phoneNumber: '+84 38761055',
+    openingHours: '10:00pm - 3:00pm',
     coordinates: { lat: 10.332, lng: 107.075 }
   },
   
+
+  {
+    id: 'p8',
+    name: 'Gazebo',
+    category: 'restaurant',
+    description: {
+      en: 'Delicious Food, amazing Seaview, Staff is friendly, fast in Perfection !',
+      vi: 'Đồ ăn ngon, view biển tuyệt đẹp, nhân viên thân thiện, phục vụ nhanh chóng hoàn hảo!'
+    },
+    address: '90 Hạ Long, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu',
+   image: '/gazebo.webp',
+    rating: 4.1,
+
+    phoneNumber: '+84 865459299',
+    openingHours: '11:00 - 21:00',
+    coordinates: { lat: 10.3355561, lng: 107.0650459 }
+  },
+
+
+  {
+    id: 'p9',
+    name: 'Gazebo',
+    category: 'restaurant',
+    description: {
+      en: 'Delicious Food, amazing Seaview, Staff is friendly, fast in Perfection !',
+      vi: 'Đồ ăn ngon, view biển tuyệt đẹp, nhân viên thân thiện, phục vụ nhanh chóng hoàn hảo!'
+    },
+    address: '90 Hạ Long, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu',
+   image: '/cutie.jpg',
+    rating: 4.1,
+
+    phoneNumber: '+84 865459299',
+    openingHours: '11:00 - 21:00',
+    coordinates: { lat: 10.3355561, lng: 107.0650459 }
+  },
+
+
+   {
+    id: 'p10',
+    name: 'Gazebo',
+    category: 'massage',
+    description: {
+      en: 'Delicious Food, amazing Seaview, Staff is friendly, fast in Perfection !',
+      vi: 'Đồ ăn ngon, view biển tuyệt đẹp, nhân viên thân thiện, phục vụ nhanh chóng hoàn hảo!'
+    },
+    address: '90 Hạ Long, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu',
+   image: '/m.png',
+    rating: 4.1,
+
+    phoneNumber: '+84 865459299',
+    openingHours: '11:00 - 21:00',
+    coordinates: { lat: 10.3355561, lng: 107.0650459 }
+  },
+
+
+  {
+    id: 'p11',
+    name: 'Anh',
+    category: 'massage',
+    description: {
+      en: 'Delicious Food, amazing Seaview, Staff is friendly, fast in Perfection !',
+      vi: 'Đồ ăn ngon, view biển tuyệt đẹp, nhân viên thân thiện, phục vụ nhanh chóng hoàn hảo!'
+    },
+    address: '90 Hạ Long, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu',
+   image: '/a.png',
+    rating: 4.8,
+
+    phoneNumber: '+84 865459299',
+    openingHours: '11:00 - 21:00',
+    coordinates: { lat: 10.3355561, lng: 107.0650459 }
+  },
+
+  {
+    id: 'p12',
+    name: 'David Pizzeria',
+    category: 'restaurant',
+    description: {
+      en: 'Delicious Food, amazing Seaview, Staff is friendly, fast in Perfection !',
+      vi: 'Đồ ăn ngon, view biển tuyệt đẹp, nhân viên thân thiện, phục vụ nhanh chóng hoàn hảo!'
+    },
+    address: '92 Hạ Long, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu',
+   image: '../assets/davidPizza.jpg',
+    rating: 4.1,
+
+    phoneNumber: '+84 2543521012',
+    openingHours: '10:00 - 22:30',
+    coordinates: { lat: 110.335521, lng: 107.0357754 }
+  },
+
+
+
+  
+
 ];
 
 export const TRANSLATIONS: Record<'en' | 'vi', Translation> = {

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { PLACES } from '../constants';
@@ -85,15 +84,30 @@ export const PlaceDetail: React.FC<PlaceDetailProps> = ({ lang, t }) => {
           </section>
 
           <section className="grid grid-cols-2 gap-4">
-             <div className="bg-white p-4 rounded-3xl border border-gray-100 text-center">
+             {/* --- OPENING HOURS SECTION --- */}
+             <div className="bg-white p-4 rounded-3xl border border-gray-100 text-center flex flex-col items-center justify-center">
                 <i className="fas fa-clock text-sunset mb-2"></i>
-                <p className="text-[10px] text-gray-500 uppercase tracking-tighter">{t.opening_hours}</p>
-                <p className="text-sm font-bold text-gray-800">8:00 - 22:00</p>
+                <p className="text-[10px] text-gray-500 uppercase tracking-tighter mb-1">{t.opening_hours}</p>
+                
+                {/* THIS LINE IS CRITICAL: It checks for place.openingHours, otherwise defaults to 8-22 */}
+                <p className="text-sm font-bold text-gray-800">
+                  {place.openingHours || '8:00 - 22:00'}
+                </p>
              </div>
-             <div className="bg-white p-4 rounded-3xl border border-gray-100 text-center">
+             
+             <div className="bg-white p-4 rounded-3xl border border-gray-100 text-center flex flex-col items-center justify-center">
                 <i className="fas fa-phone text-ocean mb-2"></i>
-                <p className="text-[10px] text-gray-500 uppercase tracking-tighter">{t.contact}</p>
-                <p className="text-sm font-bold text-gray-800">{t.available}</p>
+                <p className="text-[10px] text-gray-500 uppercase tracking-tighter mb-1">{t.contact}</p>
+                {place.phoneNumber ? (
+                  <a 
+                    href={`tel:${place.phoneNumber.replace(/\s/g, '')}`} 
+                    className="text-sm font-bold text-ocean hover:underline"
+                  >
+                    {place.phoneNumber}
+                  </a>
+                ) : (
+                  <p className="text-sm font-bold text-gray-800">{t.available}</p>
+                )}
              </div>
           </section>
         </div>
