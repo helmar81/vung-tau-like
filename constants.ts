@@ -51,6 +51,30 @@ export const ACTIVITIES: Activity[] = [
     image: './vt.webp',
     duration: '45 mins',
     location: 'Bai Sau Area'
+  },
+
+   {
+    id: 'a4',
+    title: 'Climb Christ the King',
+    description: {
+      en: 'Giant Jesus statue on Nho Mountain offering panoramic views of the city.',
+      vi: 'Tượng Chúa Kitô Vua khổng lồ trên núi Nhỏ mang đến tầm nhìn toàn cảnh thành phố.'
+    },
+    image: './hung.jpeg',
+    duration: '90 mins',
+    location: 'Bai Sau Area'
+  },
+
+  {
+    id: 'a4',
+    title: 'walk to the island',
+    description: {
+      en: 'Checking out Hon Ba Temple before the water gets high.',
+      vi: 'Tham quan chùa Hon Ba trước khi nước dâng cao.'
+    },
+    image: './island.webp',
+    duration: '2 hours',
+    location: 'Bai Sau Area'
   }
 ];
 
@@ -64,7 +88,7 @@ export const CATEGORIES: Category[] = [
     image: undefined
   },
   {
-    id: '3', icon: 'fa-camera', type: 'attraction', label: { en: 'Attractions', vi: 'Tham quan' },
+    id: '3', icon: 'fa-briefcase', type: 'services', label: { en: 'Services', vi: 'Dịch vụ' },
     image: undefined
   },
   {
@@ -90,7 +114,7 @@ export const PLACES: Place[] = [
       vi: 'Nhà hàng hải sản nổi tiếng với tầm nhìn ra biển tuyệt đẹp và nguyên liệu địa phương tươi ngon.'
     },
     address: '03 Tran Phu, Ward 5, Vung Tau',
-    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=800',
+   image: '/GanhHao.webp',
     rating: 4.5,
 
     phoneNumber: '0254 355 0909',
@@ -106,7 +130,7 @@ export const PLACES: Place[] = [
       vi: 'Quán cà phê tối giản hoàn hảo để ngắm hoàng hôn với thẩm mỹ hiện đại.'
     },
     address: '66 Ha Long, Ward 2, Vung Tau',
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800',
+    image: '/soho.webp',
     rating: 4.8,
 
     phoneNumber: '0254 355 0909',
@@ -115,35 +139,35 @@ export const PLACES: Place[] = [
   },
   {
     id: 'p3',
-    name: 'Christ the King',
-    category: 'attraction',
+    name: 'MK Bar',
+    category: 'restaurant',
     description: {
-      en: 'Giant Jesus statue on Nho Mountain offering panoramic views of the city.',
-      vi: 'Tượng Chúa Kitô Vua khổng lồ trên núi Nhỏ mang đến tầm nhìn toàn cảnh thành phố.'
+      en: 'Chill spot to grab a beer and catch the game.',
+      vi: 'Địa điểm lý tưởng để thư giãn, nhâm nhi bia và xem trận đấu.'
     },
-    address: 'Thuy Van, Ward 2, Vung Tau',
-   image: '/hung.jpeg',
+    address: '83RG+XH2, Phường 1, Vũng Tàu, Bà Rịa - Vũng Tàu, Vietnam',
+   image: '/MKBar.webp',
     rating: 4.7,
 
     phoneNumber: '0254 355 0909',
-    openingHours: '10:00 - 23:00',
-    coordinates: { lat: 10.327, lng: 107.084 }
+    openingHours: '6:30 - 24:00',
+    coordinates: { lat: 10.3424039, lng: 107.0738302 }
   },
   {
     id: 'p4',
-    name: 'Vung Tau Lighthouse',
-    category: 'attraction',
+    name: 'Taj Grill',
+    category: 'restaurant',
     description: {
-      en: 'Historic lighthouse built in 1862, providing an iconic landmark and historic feel.',
-      vi: 'Hải đăng lịch sử được xây dựng vào năm 1862, là một cột mốc mang đậm tính biểu tượng.'
+      en: 'Enjoy real Indian food at Taj Grill, from street snacks to tandoori favorites.',
+      vi: 'Hãy thưởng thức ẩm thực Ấn Độ đích thực tại Taj Grill, từ các món ăn vặt đường phố đến các món nướng tandoori được yêu thích.'
     },
-    address: 'Nho Mountain, Vung Tau',
-    image: '/thu.webp',
+    address: '152 Phan Chu Trinh, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu, Vietnam',
+    image: '/taj.webp',
     rating: 4.6,
 
-    phoneNumber: '0254 355 0909',
-    openingHours: '10:00 - 23:00',
-    coordinates: { lat: 10.332, lng: 107.075 }
+    phoneNumber: '+84 902646945',
+    openingHours: '11:00 - 21:00',
+    coordinates: { lat: 10.3337214, lng: 107.0811991 }
   },
 
  {
@@ -169,17 +193,17 @@ export const PLACES: Place[] = [
   
    {
     id: 'p7',
-    name: 'Girl',
+    name: 'coming soon',
     category: 'nightlife',
     description: {
-      en: 'Historic lighthouse built in 1862, providing an iconic landmark and historic feel.',
-      vi: 'Hải đăng lịch sử được xây dựng vào năm 1862, là một cột mốc mang đậm tính biểu tượng.'
+      en: 'Discover international romance with wonderful local women.',
+      vi: 'Khám phá tình yêu quốc tế với những người phụ nữ địa phương tuyệt vời.'
     },
     address: 'Phan Chu Thrin',
     image: '/n.jpg',
     rating: 4.6,
 
-    phoneNumber: '+84 38761055',
+    phoneNumber: '+84 0000000',
     openingHours: '10:00pm - 3:00pm',
     coordinates: { lat: 10.332, lng: 107.075 }
   },
@@ -205,35 +229,35 @@ export const PLACES: Place[] = [
 
   {
     id: 'p9',
-    name: 'Gazebo',
+    name: 'Cơm Tấm Thành Tâm ',
     category: 'restaurant',
     description: {
-      en: 'Delicious Food, amazing Seaview, Staff is friendly, fast in Perfection !',
-      vi: 'Đồ ăn ngon, view biển tuyệt đẹp, nhân viên thân thiện, phục vụ nhanh chóng hoàn hảo!'
+      en: 'complete dish for 1 Euro !',
+      vi: 'Một suất ăn hoàn chỉnh chỉ với 1 Euro!'
     },
-    address: '90 Hạ Long, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu',
-   image: '/cutie.jpg',
+    address: '114 Hoàng Hoa Thám Vũng Tàu',
+    image: '/streetfood.jpg',
     rating: 4.1,
 
-    phoneNumber: '+84 865459299',
-    openingHours: '11:00 - 21:00',
+    phoneNumber: '+84 946510099',
+    openingHours: '06:30 - 20:00',
     coordinates: { lat: 10.3355561, lng: 107.0650459 }
   },
 
 
    {
     id: 'p10',
-    name: 'Gazebo',
+    name: 'coming soon',
     category: 'massage',
     description: {
-      en: 'Delicious Food, amazing Seaview, Staff is friendly, fast in Perfection !',
-      vi: 'Đồ ăn ngon, view biển tuyệt đẹp, nhân viên thân thiện, phục vụ nhanh chóng hoàn hảo!'
+      en: 'Indulge in soothing hands that melt away tension!',
+      vi: 'Hãy tận hưởng cảm giác thư thái khi đôi tay xoa dịu mọi căng thẳng.!'
     },
     address: '90 Hạ Long, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu',
    image: '/m.png',
     rating: 4.1,
 
-    phoneNumber: '+84 865459299',
+    phoneNumber: '+84 000000',
     openingHours: '11:00 - 21:00',
     coordinates: { lat: 10.3355561, lng: 107.0650459 }
   },
@@ -244,14 +268,14 @@ export const PLACES: Place[] = [
     name: 'Anh',
     category: 'massage',
     description: {
-      en: 'Delicious Food, amazing Seaview, Staff is friendly, fast in Perfection !',
-      vi: 'Đồ ăn ngon, view biển tuyệt đẹp, nhân viên thân thiện, phục vụ nhanh chóng hoàn hảo!'
+      en: '👩✨ The Woman For All Occasions 💫💅 !',
+      vi: '👩✨ Người phụ nữ hoàn hảo cho mọi dịp 💫💅!'
     },
     address: '90 Hạ Long, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu',
    image: '/a.png',
     rating: 4.8,
 
-    phoneNumber: '+84 865459299',
+    phoneNumber: '+84 0000000',
     openingHours: '11:00 - 21:00',
     coordinates: { lat: 10.3355561, lng: 107.0650459 }
   },
@@ -273,6 +297,92 @@ export const PLACES: Place[] = [
     coordinates: { lat: 110.335521, lng: 107.0357754 }
   },
 
+  {
+    id: 'p13',
+    name: 'Marina Bay and Resort',
+    category: 'restaurant',
+    description: {
+      en: 'Friendly staff, beautiful sea view, quiet and peaceful – a perfect place for a dinner',
+      vi: 'Nhân viên thân thiện, tầm nhìn biển tuyệt đẹp, yên tĩnh và thanh bình - một địa điểm hoàn hảo cho bữa tối'
+    },
+    address: '115 Tran Phu Street, Ward 5, Vũng Tàu',
+   image: '../assets/marina.webp',
+    rating: 4.1,
+
+    phoneNumber: '+84 254 3848 888',
+    openingHours: '10:00 - 22:30',
+    coordinates: { lat: 110.335521, lng: 107.0357754 }
+  },
+
+  {
+    id: 'p14',
+    name: 'Rovina coffee Á Châu',
+    category: 'coffee',
+    description: {
+      en: 'Nice drinks that....! ',
+      vi: ' Giá cả phải chăng, địa điểm đẹp và nhân viên cực kỳ thân thiện! '
+    },
+    address: '6 Văn Cao, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu, Vietnam',
+   image: '../assets/rovina.webp',
+    rating: 4.1,
+
+    phoneNumber: '+84 00000000',
+    openingHours: '08:00 - 16:00',
+    coordinates: { lat: 10.3510987, lng: 107.0181853 }
+  },
+
+  {
+    id: 'p15',
+    name: 'CAT CAT DENTAL CLINIC',
+    category: 'services',
+    description: {
+      en: 'WHERE 😊✨ SMILES 😄💫 BLOOM AND FLOURISH 🌸🌺 WITH JOY 🌈💝 ',
+      vi: ' NƠI NHỮNG NỤ CƯỜI 😊✨ NỞ RỘ VÀ PHÁT TRIỂN 🌸🌺 VỚI NIỀM VUI 🌈💝 '
+    },
+    address: '225 Le Hong Phong Street, Ward 8, Vung Tau, Vietnam',
+   image: '../assets/cat.webp',
+    rating: 4.1,
+
+    phoneNumber: '+84 878103103',
+    openingHours: '24 hours',
+    coordinates: { lat: 10.3367394, lng: 10.3367394 }
+  },
+
+  {
+    id: 'p16',
+    name: 'Lavender Spa',
+    category: 'massage',
+    description: {
+      en: 'Experience a rejuvenating six-hand massage therapy session for the exceptional value of €10🌈💝 ',
+      vi: ' Trải nghiệm liệu trình massage sáu tay thư giãn tuyệt vời với giá chỉ 10€🌈💝 '
+    },
+    address: '101A Phan Chu Trinh , Phường 2, 38 Đinh Tiên Hoàng, Phường 1, Vũng Tàu, Vietnam',
+   image: '../assets/lavender.webp',
+    rating: 4.7,
+
+    phoneNumber: '+84 915 782 807',
+    openingHours: '24 hours',
+    coordinates: { lat: 10.3367394, lng: 10.3367394 }
+  },
+
+  {
+    id: 'p17',
+    name: 'Ten coffee gelato matcha',
+    category: 'coffee',
+    description: {
+      en: 'Killer spot - awesome joe, sweet views and the wifi is on point',
+      vi: ' Địa điểm tuyệt vời - cà phê ngon, view đẹp và wifi cực tốt. '
+    },
+    address: '1 Lê Quý Đôn, Phường 1, Vũng Tàu, Vietnam',
+   image: '../assets/ten.webp',
+    rating: 4.7,
+
+    phoneNumber: '+84 90000000',
+    openingHours: '06:30 - 22:00',
+    coordinates: { lat: 10.348084, lng: 107.0722031 }
+  },
+
+
 
 
   
@@ -285,7 +395,7 @@ export const TRANSLATIONS: Record<'en' | 'vi', Translation> = {
     nav_guide: 'Guide',
     nav_todo: 'To Do',
     nav_ai: 'AI',
-    discover_heading: 'Discover the lovely seaside town in Vietnam',
+    discover_heading: ' ',
     discover_sub: 'Experience Vung Tau like a local with our curated guides.',
     guide: 'Travel Guide',
     things_to_do: 'Things to Do',
@@ -324,7 +434,7 @@ export const TRANSLATIONS: Record<'en' | 'vi', Translation> = {
     nav_guide: 'Cẩm nang',
     nav_todo: 'Hoạt động',
     nav_ai: 'Trợ lý AI',
-    discover_heading: 'Khám phá thành phố biển xinh đẹp tại Việt Nam',
+    discover_heading: '',
     discover_sub: 'Trải nghiệm Vũng Tàu như người bản địa với hướng dẫn từ chúng tôi.',
     guide: 'Cẩm nang',
     things_to_do: 'Hoạt động',

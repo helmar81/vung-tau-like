@@ -44,7 +44,7 @@ export const AIChat: React.FC<AIChatProps> = ({ t, lang }) => {
             <iframe 
               className="absolute top-0 left-0 w-full h-full"
               // REPLACE THE URL BELOW WITH YOUR VIDEO ID
-              src="https://www.youtube.com/embed/Ff-y6HX16kg?si=tP5ex1aL0a7OHKuX" 
+             src="https://www.youtube.com/embed/vt8NCW3_vZg" 
               title="Vung Tau Intro Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowFullScreen

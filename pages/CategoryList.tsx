@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Place, Translation, Language } from '../types';
 import { PLACES, CATEGORIES } from '../constants';
+import { Translation, Language } from '../types';
 
 interface CategoryListProps {
   t: Translation;
@@ -42,9 +41,10 @@ export const CategoryList: React.FC<CategoryListProps> = ({ t, lang }) => {
                 <img 
                   src={place.image} 
                   alt={place.name} 
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sunset font-bold text-xs">
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-sunset font-bold text-xs">
                   <i className="fas fa-star mr-1"></i> {place.rating}
                 </div>
               </div>

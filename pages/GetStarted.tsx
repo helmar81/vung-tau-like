@@ -16,7 +16,7 @@ export const GetStarted: React.FC<GetStartedProps> = ({ t, lang }) => {
       {/* Immersive Header */}
       <div className="relative h-[40vh] w-full">
         <img 
-          src="https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=1200" 
+          src="./island.webp" 
           className="w-full h-full object-cover" 
           alt="Vung Tau View" 
         />

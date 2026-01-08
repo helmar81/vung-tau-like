@@ -1,30 +1,32 @@
+// src/services/api.ts
 
-import app from './firebase';
+// Access the key defined in vite.config.ts -> define
+const WEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
+const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
-const REGION = 'us-central1';
-const PROJECT_ID = 'vungtaulike';
-
-/**
- * Service to interact with our secure backend functions.
- * Includes graceful fallbacks for missing or unreachable services to ensure a smooth user experience.
- */
 export const CloudAPI = {
   async getWeather() {
     try {
-      const url = `https://${REGION}-${PROJECT_ID}.cloudfunctions.net/getVungTauWeather`;
+      // 1. Check if key exists
+      if (!WEATHER_API_KEY) {
+        console.warn("CloudAPI: Missing OPENWEATHER_API_KEY. Using fallback data.");
+        throw new Error("Missing API Key");
+      }
+
+      // 2. Direct fetch to OpenWeatherMap
+      const url = `${BASE_URL}/weather?q=Vung Tau&units=metric&appid=${WEATHER_API_KEY}`;
       const response = await fetch(url);
       
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`Weather API error! status: ${response.status}`);
       }
       
       return await response.json();
     } catch (error) {
-      // Gracefully handle connectivity issues during development or if the function is not yet deployed.
-      // We use console.warn instead of console.error to keep logs clean while providing an informative message.
-      console.warn("CloudAPI: Weather service unreachable or not deployed. Providing fallback local weather data.");
+      console.warn("CloudAPI: Weather service unavailable. Providing fallback local weather data.");
       
-      // Fallback: Typical pleasant coastal weather for Vung Tau (approx. 29°C, Sunny)
+      // Fallback: Default Vung Tau weather (Sunny, ~29°C)
+      // This ensures the UI never breaks even if the API fails
       return {
         main: {
           temp: 29.5,

@@ -16,7 +16,10 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label, active, onClick }) => (
       active ? 'text-ocean scale-110' : 'text-gray-400'
     }`}
   >
-    <i className={`fas ${icon} text-lg`}></i>
+    {/* ✅ FIX: Added container with fixed dimensions to prevent layout shifts */}
+    <div className="w-6 h-6 flex items-center justify-center">
+      <i className={`fas ${icon} text-lg`}></i>
+    </div>
     <span className="text-[10px] font-medium uppercase tracking-wider whitespace-nowrap">{label}</span>
     {active && <div className="w-1 h-1 bg-ocean rounded-full mt-0.5"></div>}
   </button>
@@ -106,7 +109,7 @@ export const BottomNav: React.FC<{ translations: Translation }> = ({ translation
         {/* The New Integrated "About" Item */}
         <NavItem 
           icon="fa-info-circle"
-          label={translations.about || "About"} // Ensure you add 'about' to your Translation type, or hardcode string here
+          label={translations.about || "About"} 
           active={showFooter}
           onClick={toggleFooter}
         />

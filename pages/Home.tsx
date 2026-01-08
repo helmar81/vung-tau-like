@@ -1,7 +1,6 @@
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Translation, Place } from '../types';
+import { Translation } from '../types';
 import { PLACES } from '../constants';
 import { CloudAPI } from '../services/api';
 
@@ -32,27 +31,38 @@ export const Home: React.FC<HomeProps> = ({ t, lang, onViewDetails }) => {
     <div className="pb-24">
       {/* Hero Section */}
       <div className="relative h-[70vh] w-full overflow-hidden flex items-end pb-20 px-6 bg-deep">
+        {/* LCP OPTIMIZATION: Use fetchPriority="high" for the largest image */}
         <img 
-          src="./vt.webp" 
+          src="/assets/vungtau.webp" 
           className="absolute inset-0 w-full h-full object-cover opacity-80"
           alt="Vung Tau Coastline"
+          // @ts-ignore - fetchPriority is valid in modern browsers but TS might flag it
+          fetchPriority="high" 
           loading="eager"
+          decoding="async"
         />
-        {/* Gradient Overlay for high contrast accessibility */}
+        
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
         
         <div className="relative z-10 w-full animate-fadeIn">
-          {/* Weather Badge */}
-          {weather && (
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 mb-6 animate-slideDown">
-              <img 
-                src={`https://openweathermap.org/img/wn/${weather.icon}.png`} 
-                className="w-8 h-8" 
-                alt="weather"
-              />
-              <span className="text-white font-bold text-sm">Vung Tau: {weather.temp}°C</span>
-            </div>
-          )}
+          {/* CLS OPTIMIZATION: Min-height wrapper prevents layout shift when data loads */}
+          <div className="min-h-[3.5rem] flex items-center">
+            {weather ? (
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 mb-6 animate-slideDown">
+                <img 
+                  src={`https://openweathermap.org/img/wn/${weather.icon}.png`} 
+                  className="w-8 h-8" 
+                  alt="weather"
+                  width="32" 
+                  height="32"
+                />
+                <span className="text-white font-bold text-sm">Vung Tau: {weather.temp}°C</span>
+              </div>
+            ) : (
+               /* Optional: Render a tiny transparent placeholder to hold space perfectly if needed */
+               <div className="h-8 mb-6"></div>
+            )}
+          </div>
 
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight drop-shadow-2xl max-w-lg">
             {t.discover_heading}
@@ -63,6 +73,7 @@ export const Home: React.FC<HomeProps> = ({ t, lang, onViewDetails }) => {
           <button 
             onClick={() => navigate('/get-started')}
             className="mt-8 bg-sunset hover:bg-orange-600 text-white px-10 py-4 rounded-2xl font-bold transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center space-x-2"
+            aria-label={t.get_started}
           >
             <span>{t.get_started}</span>
             <i className="fas fa-chevron-right text-xs"></i>
@@ -86,7 +97,7 @@ export const Home: React.FC<HomeProps> = ({ t, lang, onViewDetails }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {PLACES.slice(0, 4).map((place) => (
+          {PLACES.slice(0, 4).map((place, index) => (
             <div 
               key={place.id}
               onClick={() => onViewDetails(place.id)}
@@ -97,21 +108,20 @@ export const Home: React.FC<HomeProps> = ({ t, lang, onViewDetails }) => {
                   src={place.image} 
                   alt={place.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  // PERFORMANCE: Lazy load images below the fold
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-2xl text-sunset font-bold text-sm shadow-lg flex items-center">
                   <i className="fas fa-star mr-1.5"></i>{place.rating}
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800 group-hover:text-ocean transition-colors">{place.name}</h3>
-                    <p className="text-gray-500 text-sm mt-1.5 flex items-center font-medium">
-                      <i className="fas fa-location-dot mr-2 text-ocean/60"></i>
-                      {place.address}
-                    </p>
-                  </div>
-                </div>
+                <h3 className="text-xl font-bold text-gray-800 group-hover:text-ocean transition-colors">{place.name}</h3>
+                <p className="text-gray-500 text-sm mt-1.5 flex items-center font-medium">
+                  <i className="fas fa-location-dot mr-2 text-ocean/60"></i>
+                  {place.address}
+                </p>
                 <p className="text-gray-600 mt-4 text-sm leading-relaxed line-clamp-2">
                   {place.description[lang]}
                 </p>
@@ -120,10 +130,6 @@ export const Home: React.FC<HomeProps> = ({ t, lang, onViewDetails }) => {
           ))}
         </div>
       </div>
-
-       
-        </div>
-      
-  
+    </div>
   );
 };
