@@ -1,0 +1,25 @@
+# Vung Tau Like: The Insider's Guide to Vung Tau, Vietnam
+
+> **Site Description:** A comprehensive digital guide to Vung Tau, Vietnam, curated by locals and expats. The site focuses on nightlife, bars, dining, and hidden gems in this coastal city, offering a "local perspective" distinct from generic travel wikis.
+
+## Main Sections & Navigation
+
+- [Home Page](https://vungtaulike.web.app/): The main dashboard for Vung Tau discovery.
+- [Bar & Nightlife Guide](https://vungtaulike.web.app/vungtau/nightlife): A curated list of the best bars, beach clubs, and nightlife spots in Vung Tau.
+- [About the Project](https://vungtaulike.web.app/): Information about the creators and the mission to provide authentic Vung Tau recommendations.
+
+## Top Recommendations (Summary)
+
+### Nightlife & Bars
+The site creates distinct categories for nightlife to help visitors choose the right vibe:
+- **Beach Clubs:** Locations along Back Beach (Bai Sau) for sunset drinks.
+- **Sports Bars:** Where to watch live sports (common in the expat community).
+- **Cocktail Lounges:** Higher-end venues for craft cocktails.
+
+### Local Insights
+- **Weekend Escape:** Vung Tau is positioned as the primary weekend getaway from Ho Chi Minh City (Saigon).
+- **Best Times to Visit:** Weekdays for quiet relaxation; Weekends for vibrant nightlife.
+
+## Technical Details
+- **Platform:** Built on React.js and hosted on Firebase (web.app).
+- **Accessibility:** Designed as a Progressive Web App (PWA) for mobile-first usage by travelers on the go.

@@ -48,7 +48,7 @@ const AppContent: React.FC = () => {
                 scrolled ? 'text-ocean' : 'text-white'
               }`}
             >
-              VT<span className="text-sunset">.</span>LIKE
+             
             </div>
           ) : (
             /* Spacer to keep LanguageSwitcher on the right when logo is hidden */

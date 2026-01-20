@@ -1,31 +1,135 @@
-import { defineConfig, loadEnv } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig, loadEnv } from "vite";
+import react from "@vitejs/plugin-react";
+import { VitePWA } from "vite-plugin-pwa";
+import path from "path";
 
-// Fix for __dirname in ES modules
 const __dirname = path.resolve();
 
 export default defineConfig(({ mode }) => {
-  // Load env file based on `mode` in the current working directory.
-  // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
-  const env = loadEnv(mode, process.cwd(), '');
+  const env = loadEnv(mode, process.cwd(), "");
 
   return {
     server: {
-      port: 3001, // CHANGE THIS to 3001 to avoid conflicts with zombie processes
-      host: '0.0.0.0',
+      port: 3001,
+      host: "0.0.0.0"
     },
-    plugins: [react()],
+
+    plugins: [
+      react(),
+
+      VitePWA({
+        registerType: "autoUpdate",
+        injectRegister: "auto",
+
+        includeAssets: [
+          "favicon.ico",
+          "apple-touch-icon.png",
+          "mask-icon.svg"
+        ],
+
+        manifest: {
+          name: "Discover Vung Tau",
+          short_name: "Vung Tau Like",
+          description:
+            "Experience Vung Tau like a local with our curated guides",
+          theme_color: "#2563EB",
+          background_color: "#FFFFFF",
+          display: "standalone",
+          scope: "/",
+          start_url: "/",
+          orientation: "portrait-primary",
+
+          icons: [
+            {
+              src: "icons/icon-192x192.png",
+              sizes: "192x192",
+              type: "image/png"
+            },
+            {
+              src: "icons/icon-512x512.png",
+              sizes: "512x512",
+              type: "image/png",
+              purpose: "any maskable"
+            }
+          ],
+
+          shortcuts: [
+            {
+              name: "Discover Vung Tau",
+              short_name: "Vung Tau Like",
+              description: "Experience Vung Tau like a local",
+              url: "/",
+              icons: [
+                {
+                  src: "icons/icon-192x192.png",
+                  sizes: "192x192"
+                }
+              ]
+            }
+          ]
+        },
+
+        workbox: {
+          cleanupOutdatedCaches: true,
+          clientsClaim: true,
+          skipWaiting: true,
+
+          runtimeCaching: [
+            {
+              urlPattern: ({ request }) =>
+                request.destination === "image",
+              handler: "CacheFirst",
+              options: {
+                cacheName: "images-cache",
+                expiration: {
+                  maxEntries: 100,
+                  maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
+                }
+              }
+            },
+            {
+              urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
+              handler: "CacheFirst",
+              options: {
+                cacheName: "google-fonts-cache",
+                expiration: {
+                  maxEntries: 20,
+                  maxAgeSeconds: 60 * 60 * 24 * 365
+                }
+              }
+            }
+          ]
+        }
+      })
+    ],
+
     define: {
-      // Stringify these values to prevent crashes
-      'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-      'process.env.OPENWEATHER_API_KEY': JSON.stringify(env.OPENWEATHER_API_KEY),
+      "process.env.API_KEY": JSON.stringify(env.GEMINI_API_KEY),
+      "process.env.GEMINI_API_KEY": JSON.stringify(env.GEMINI_API_KEY),
+      "process.env.OPENWEATHER_API_KEY": JSON.stringify(
+        env.OPENWEATHER_API_KEY
+      )
     },
+
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './src'),
+        "@": path.resolve(__dirname, "./src")
+      }
+    },
+
+    build: {
+      sourcemap: false,
+      cssCodeSplit: true,
+      chunkSizeWarningLimit: 600,
+
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            react: ["react", "react-dom"],
+            router: ["react-router-dom"]
+          }
+        }
       }
     }
-  }
-})
+  };
+});

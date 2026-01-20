@@ -33,7 +33,7 @@ export const Home: React.FC<HomeProps> = ({ t, lang, onViewDetails }) => {
       <div className="relative h-[70vh] w-full overflow-hidden flex items-end pb-20 px-6 bg-deep">
         {/* LCP OPTIMIZATION: Use fetchPriority="high" for the largest image */}
         <img 
-          src="/assets/vungtau.webp" 
+          src="/assets/vt3.webp" 
           className="absolute inset-0 w-full h-full object-cover opacity-80"
           alt="Vung Tau Coastline"
           // @ts-ignore - fetchPriority is valid in modern browsers but TS might flag it

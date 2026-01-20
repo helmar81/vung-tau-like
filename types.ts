@@ -3,7 +3,7 @@ export type Language = 'en' | 'vi';
 export interface Place {
   id: string;
   name: string;
-  category: 'restaurant' | 'coffee' | 'nightlife' | 'massage' | 'services';
+  category: 'restaurant' | 'coffee' | 'nightlife' | 'massage'  | 'accomodation'  | 'services';
   description: {
     en: string;
     vi: string;

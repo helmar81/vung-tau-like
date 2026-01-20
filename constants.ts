@@ -80,33 +80,90 @@ export const ACTIVITIES: Activity[] = [
 
 export const CATEGORIES: Category[] = [
   {
-    id: '1', icon: 'fa-utensils', type: 'restaurant', label: { en: 'Restaurants', vi: 'Nhà hàng' },
+    id: '1',
+    icon: 'utensils',
+    type: 'restaurant',
+    label: { en: 'Restaurants', vi: 'Nhà hàng' },
     image: undefined
   },
   {
-    id: '2', icon: 'fa-coffee', type: 'coffee', label: { en: 'Coffee Shops', vi: 'Quán cà phê' },
+    id: '2',
+    icon: 'coffee',
+    type: 'coffee',
+    label: { en: 'Coffee Shops', vi: 'Quán cà phê' },
     image: undefined
   },
   {
-    id: '3', icon: 'fa-briefcase', type: 'services', label: { en: 'Services', vi: 'Dịch vụ' },
+    id: '3',
+    icon: 'briefcase',
+    type: 'services',
+    label: { en: 'Services', vi: 'Dịch vụ' },
     image: undefined
   },
   {
-    id: '4', icon: 'fa-moon', type: 'nightlife', label: { en: 'Nightlife', vi: 'Giải trí đêm' },
+    id: '4',
+    icon: 'moon',
+    type: 'nightlife',
+    label: { en: 'Nightlife', vi: 'Giải trí đêm' },
     image: undefined
   },
-  { 
-    id: '5', 
-    icon: 'fa-spa', 
-    type: 'massage', 
+  {
+    id: '5',
+    icon: 'spa',
+    type: 'massage',
     label: { en: 'Massage', vi: 'Massage' },
-    image: '' // Add this line
+    image: ''
   },
+
+  {
+    id: '6',
+    icon: 'Bed',
+    type: 'accomodation',
+    label: { en: 'Accomodation', vi: 'Chỗ ở' },
+    image: undefined
+  }
 ];
 
 export const PLACES: Place[] = [
+  
+   {
+    id: 'pancacke',
+    name: 'Banh Khot 14',
+    category: 'restaurant',
+    description: {
+      en: 'traditional Banh Khot, consistently drawing significant patronage.',
+      vi: ' Bánh Khot truyền thống luôn thu hút lượng khách hàng đáng kể. '
+    },
+    address: '14 Hoàng Hoa Thám, Phường 3, Vũng Tàu, Bà Rịa - Vũng Tàu, Vietnam',
+   image: '../assets/khot14.webp',
+    rating: 4.2,
+
+    phoneNumber: '+84 02543859709',
+    openingHours: '08:00 - 19:00',
+    coordinates: { lat: 10.3406927, lng: 107.0763814 }
+  },
+
   {
-    id: 'p1',
+    id: 'german',
+    name: 'Schnitzel House Helmut',
+    category: 'restaurant',
+    description: {
+      en: 'enjoy a generous portion of crispy Schnitzel accompanied by fresh garden salad, golden fries, and a refreshing cold beer 🍺',
+      vi: ' Thưởng thức phần Schnitzel giòn tan kèm salad rau tươi, khoai tây chiên vàng ươm và một ly bia lạnh sảng khoái 🍺 '
+    },
+    address: '166 Phan Chu Trinh, Phường 2, Vũng Tàu 78000, Vietnam',
+   image: '../assets/german.png',
+    rating: 4.2,
+
+    phoneNumber: '+84 353396330',
+    openingHours: '17:00 - 22:00',
+    coordinates: { lat: 10.332567, lng: 107.0818814 }
+  },
+  
+  
+  
+  {
+    id: 'seafood',
     name: 'Ganh Hao Restaurant',
     category: 'restaurant',
     description: {
@@ -122,7 +179,7 @@ export const PLACES: Place[] = [
     coordinates: { lat: 10.358, lng: 107.065 }
   },
   {
-    id: 'p2',
+    id: 'soho',
     name: 'SOHO Coffee',
     category: 'coffee',
     description: {
@@ -137,24 +194,26 @@ export const PLACES: Place[] = [
     openingHours: '10:00 - 23:00',
     coordinates: { lat: 10.33028793334961, lng: 107.07640838623047 }
   },
+
   {
-    id: 'p3',
-    name: 'MK Bar',
-    category: 'restaurant',
+    id: 'ten',
+    name: 'Ten coffee gelato matcha',
+    category: 'coffee',
     description: {
-      en: 'Chill spot to grab a beer and catch the game.',
-      vi: 'Địa điểm lý tưởng để thư giãn, nhâm nhi bia và xem trận đấu.'
+      en: 'Killer spot - awesome joe, sweet views and the wifi is on point',
+      vi: ' Địa điểm tuyệt vời - cà phê ngon, view đẹp và wifi cực tốt. '
     },
-    address: '83RG+XH2, Phường 1, Vũng Tàu, Bà Rịa - Vũng Tàu, Vietnam',
-   image: '/MKBar.webp',
+    address: '1 Lê Quý Đôn, Phường 1, Vũng Tàu, Vietnam',
+   image: '../assets/ten.webp',
     rating: 4.7,
 
-    phoneNumber: '0254 355 0909',
-    openingHours: '6:30 - 24:00',
-    coordinates: { lat: 10.3424039, lng: 107.0738302 }
+    phoneNumber: '+84 90000000',
+    openingHours: '06:30 - 22:00',
+    coordinates: { lat: 10.348084, lng: 107.0722031 }
   },
+  
   {
-    id: 'p4',
+    id: 'indian',
     name: 'Taj Grill',
     category: 'restaurant',
     description: {
@@ -171,7 +230,7 @@ export const PLACES: Place[] = [
   },
 
  {
-    id: 'p5',
+    id: 'wellness',
     name: 'Wellness Homes ',
     category: 'massage',
     description: {
@@ -210,7 +269,7 @@ export const PLACES: Place[] = [
   
 
   {
-    id: 'p8',
+    id: 'gazebo',
     name: 'Gazebo',
     category: 'restaurant',
     description: {
@@ -228,7 +287,7 @@ export const PLACES: Place[] = [
 
 
   {
-    id: 'p9',
+    id: 'streetfood',
     name: 'Cơm Tấm Thành Tâm ',
     category: 'restaurant',
     description: {
@@ -264,7 +323,7 @@ export const PLACES: Place[] = [
 
 
   {
-    id: 'p11',
+    id: 'anh',
     name: 'Anh',
     category: 'massage',
     description: {
@@ -281,7 +340,7 @@ export const PLACES: Place[] = [
   },
 
   {
-    id: 'p12',
+    id: 'pizza',
     name: 'David Pizzeria',
     category: 'restaurant',
     description: {
@@ -298,7 +357,7 @@ export const PLACES: Place[] = [
   },
 
   {
-    id: 'p13',
+    id: 'marina',
     name: 'Marina Bay and Resort',
     category: 'restaurant',
     description: {
@@ -315,7 +374,7 @@ export const PLACES: Place[] = [
   },
 
   {
-    id: 'p14',
+    id: 'rovina',
     name: 'Rovina coffee Á Châu',
     category: 'coffee',
     description: {
@@ -332,7 +391,7 @@ export const PLACES: Place[] = [
   },
 
   {
-    id: 'p15',
+    id: 'dental',
     name: 'CAT CAT DENTAL CLINIC',
     category: 'services',
     description: {
@@ -349,7 +408,7 @@ export const PLACES: Place[] = [
   },
 
   {
-    id: 'p16',
+    id: 'lavender',
     name: 'Lavender Spa',
     category: 'massage',
     description: {
@@ -366,21 +425,97 @@ export const PLACES: Place[] = [
   },
 
   {
-    id: 'p17',
-    name: 'Ten coffee gelato matcha',
-    category: 'coffee',
+    id: 'bar',
+    name: 'MK Bar',
+    category: 'restaurant',
     description: {
-      en: 'Killer spot - awesome joe, sweet views and the wifi is on point',
-      vi: ' Địa điểm tuyệt vời - cà phê ngon, view đẹp và wifi cực tốt. '
+      en: 'Chill spot to grab a beer and catch the game.',
+      vi: 'Địa điểm lý tưởng để thư giãn, nhâm nhi bia và xem trận đấu.'
     },
-    address: '1 Lê Quý Đôn, Phường 1, Vũng Tàu, Vietnam',
-   image: '../assets/ten.webp',
+    address: '83RG+XH2, Phường 1, Vũng Tàu, Bà Rịa - Vũng Tàu, Vietnam',
+   image: '/MKBar.webp',
     rating: 4.7,
 
-    phoneNumber: '+84 90000000',
+    phoneNumber: '0254 355 0909',
+    openingHours: '6:30 - 24:00',
+    coordinates: { lat: 10.3424039, lng: 107.0738302 }
+  },
+
+  
+
+  {
+    id: 'freelancer',
+    name: 'Phone Tempered Glass',
+    category: 'services',
+    description: {
+      en: '🛡️📱 Ultimate Protection For Your Smartphone 💪✨',
+      vi: ' 🛡️📱 Bảo vệ tối ưu cho điện thoại thông minh của bạn '
+    },
+    address: 'Freelancer',
+   image: '../assets/phone.webp',
+    rating: 4.3,
+
+    phoneNumber: '+84 567202777',
     openingHours: '06:30 - 22:00',
     coordinates: { lat: 10.348084, lng: 107.0722031 }
   },
+
+
+  {
+    id: 'american',
+    name: 'Open sesame Bar',
+    category: 'nightlife',
+    description: {
+      en: 'the kind of place where it’s easy to strike up a conversation with the person sitting next to you✨',
+      vi: ' Đây là kiểu nơi mà bạn dễ dàng bắt chuyện với người ngồi cạnh mình. '
+    },
+    address: '51a Phan Chu Trinh, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu 999999, Vietnam',
+   image: '../assets/sesam.jpeg',
+    rating: 4.7,
+
+    phoneNumber: '+84 835689154',
+    openingHours: '06:30 - 22:00',
+    coordinates: { lat: 10.3371052, lng: 107.0780744 }
+  },
+
+
+  {
+    id: 'room',
+    name: 'room to rent',
+    category: 'accomodation',
+    description: {
+      en: 'get in touch✨',
+      vi: ' Đây là kiểu nơi mà bạn dễ dàng bắt chuyện với người ngồi cạnh mình. '
+    },
+    address: ' Vũng Tàu, Vietnam',
+   image: '../assets/rent.webp',
+    rating: 4.7,
+
+    phoneNumber: '+49 1629745975',
+    openingHours: '06:30 - 22:00',
+    coordinates: { lat: 10.3371052, lng: 107.0780744 }
+  },
+
+
+   {
+    id: 'photocopy',
+    name: 'Copy Shop',
+    category: 'services',
+    description: {
+      en: '📄 Get your documents printed ⚡️ quickly! 🖨️',
+      vi: ' 📄 In tài liệu của bạn nhanh chóng ⚡️! 🖨️ '
+    },
+    address: ' Võ Thị Sáu Vũng Tàu, Vietnam',
+   image: '../assets/copy.png',
+    rating: 4.7,
+
+    phoneNumber: '+84 943 103 799',
+    openingHours: '08:30 - 22:00',
+    coordinates: { lat: 10.3399814, lng: 107.0877767 }
+  },
+
+
+ 
 
 
 
@@ -395,8 +530,8 @@ export const TRANSLATIONS: Record<'en' | 'vi', Translation> = {
     nav_guide: 'Guide',
     nav_todo: 'To Do',
     nav_ai: 'AI',
-    discover_heading: ' ',
-    discover_sub: 'Experience Vung Tau like a local with our curated guides.',
+    discover_heading: 'Vietnam',
+    discover_sub: '🌊 Experience Vung Tau Like a Local 🌴🏖️',
     guide: 'Travel Guide',
     things_to_do: 'Things to Do',
     search_placeholder: 'Search for places...',
@@ -434,8 +569,8 @@ export const TRANSLATIONS: Record<'en' | 'vi', Translation> = {
     nav_guide: 'Cẩm nang',
     nav_todo: 'Hoạt động',
     nav_ai: 'Trợ lý AI',
-    discover_heading: '',
-    discover_sub: 'Trải nghiệm Vũng Tàu như người bản địa với hướng dẫn từ chúng tôi.',
+    discover_heading: 'Viet Nam',
+    discover_sub: '🌊 Trải nghiệm Vũng Tàu như người bản địa 🌴🏖️',
     guide: 'Cẩm nang',
     things_to_do: 'Hoạt động',
     search_placeholder: 'Tìm kiếm địa điểm...',

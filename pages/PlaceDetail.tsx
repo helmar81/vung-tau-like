@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { PLACES } from '../constants';
 import { Language, Translation } from '../types';
@@ -11,6 +11,8 @@ interface PlaceDetailProps {
 export const PlaceDetail: React.FC<PlaceDetailProps> = ({ lang, t }) => {
   const { placeId } = useParams<{ placeId: string }>();
   const navigate = useNavigate();
+  const [showCopied, setShowCopied] = useState(false);
+  
   const place = PLACES.find(p => p.id === placeId);
 
   if (!place) return (
@@ -23,22 +25,71 @@ export const PlaceDetail: React.FC<PlaceDetailProps> = ({ lang, t }) => {
 
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.address + " Vung Tau")}`;
 
+  const handleShare = async () => {
+    const shareData = {
+      title: place.name,
+      text: `Check out ${place.name} on Vung Tau Like!`,
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.log('Error sharing:', err);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        setShowCopied(true);
+        setTimeout(() => setShowCopied(false), 2000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+    }
+  };
+
   return (
     <div className="pb-24">
-      {/* Header Image */}
-      <div className="relative h-[45vh] w-full">
+      {/* Header Image - bg-gray-200 fallback ensures buttons are seen if image loads slow */}
+      <div className="relative h-[45vh] w-full bg-gray-200">
         <img 
           src={place.image} 
           className="w-full h-full object-cover" 
           alt={place.name} 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        
+        {/* ✅ BACK BUTTON (LEFT) */}
+        {/* positioned at 'left-6' with 'fa-arrow-left' */}
         <button 
           onClick={() => navigate(-1)}
-          className="absolute top-6 left-6 w-10 h-10 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center text-white z-20"
+          className="absolute top-6 left-6 w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-900 shadow-xl z-50 hover:scale-110 transition-transform active:scale-95"
+          aria-label="Go Back"
         >
           <i className="fas fa-arrow-left"></i>
         </button>
+
+        {/* ✅ SHARE BUTTON (RIGHT) */}
+        {/* positioned at 'right-6' with 'fa-share-nodes' */}
+        <button 
+          onClick={handleShare}
+          className="absolute top-6 right-6 w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-900 shadow-xl z-50 hover:scale-110 transition-transform active:scale-95"
+          aria-label="Share"
+        >
+          {showCopied ? (
+            <i className="fas fa-check text-green-600"></i>
+          ) : (
+            <i className="fas fa-share-nodes"></i>
+          )}
+        </button>
+        
+        {/* Copied Feedback Toast (Appears on Right below share button) */}
+        {showCopied && (
+           <div className="absolute top-20 right-6 bg-gray-900 text-white text-xs px-3 py-1.5 rounded-lg shadow-lg animate-fade-in-up z-50">
+             Link Copied!
+           </div>
+        )}
       </div>
 
       {/* Content */}
@@ -84,12 +135,9 @@ export const PlaceDetail: React.FC<PlaceDetailProps> = ({ lang, t }) => {
           </section>
 
           <section className="grid grid-cols-2 gap-4">
-             {/* --- OPENING HOURS SECTION --- */}
              <div className="bg-white p-4 rounded-3xl border border-gray-100 text-center flex flex-col items-center justify-center">
                 <i className="fas fa-clock text-sunset mb-2"></i>
                 <p className="text-[10px] text-gray-500 uppercase tracking-tighter mb-1">{t.opening_hours}</p>
-                
-                {/* THIS LINE IS CRITICAL: It checks for place.openingHours, otherwise defaults to 8-22 */}
                 <p className="text-sm font-bold text-gray-800">
                   {place.openingHours || '8:00 - 22:00'}
                 </p>
