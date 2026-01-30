@@ -4,7 +4,7 @@
   "description": "Experience Vung Tau like a local with our curated guides",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FFFFFF",
+  "background_color": "#87CEEB",
   "theme_color": "#2563EB",
   "orientation": "portrait-primary",
   "scope": "/",
@@ -13,7 +13,7 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"

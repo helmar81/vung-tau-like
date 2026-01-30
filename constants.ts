@@ -9,7 +9,7 @@ import { Place, Category, Translation, Activity } from './types';
 // Add this new array at the bottom
 export const ACTIVITIES: Activity[] = [
   {
-    id: 'a1',
+    id: 'hike',
     title: 'Hike to the Lighthouse',
     description: {
       en: 'A scenic walk up Nho Mountain to the historic lighthouse. Best done in the early morning.',
@@ -20,7 +20,7 @@ export const ACTIVITIES: Activity[] = [
     location: 'Nho Mountain'
   },
   {
-    id: 'a2',
+    id: 'kite',
     title: 'Kitesurfing Lesson',
     description: {
       en: 'Learn to kitesurf at Back Beach, one of the best spots in Vietnam for wind sports.',
@@ -31,7 +31,7 @@ export const ACTIVITIES: Activity[] = [
     location: 'Back Beach'
   },
   {
-    id: 'a3',
+    id: 'sunset',
     title: 'Sunset at Front Beach',
     description: {
       en: 'Relax in the park or rent a bicycle to watch the sun go down over the ocean.',
@@ -41,8 +41,23 @@ export const ACTIVITIES: Activity[] = [
     duration: '1 hour',
     location: 'Front Beach Park'
   },
+
+
+{
+    id: 'TableTennis',
+    title: 'Table Tennis @Vietsovpetrov',
+    description: {
+      en: 'A rugged, rocky hill offering raw and panoramic views of Back Beach.',
+      vi: 'Một ngọn đồi đá hoang sơ mang lại tầm nhìn toàn cảnh ra Bãi Sau.'
+    },
+    image: '../assets/tableTennis.jpg',
+    duration: '90 mins',
+    location: 'Bai Sau Area'
+  },
+
+
   {
-    id: 'a4',
+    id: 'hill',
     title: 'Visit the Pig Hill (Doi Con Heo)',
     description: {
       en: 'A rugged, rocky hill offering raw and panoramic views of Back Beach.',
@@ -54,7 +69,7 @@ export const ACTIVITIES: Activity[] = [
   },
 
    {
-    id: 'a4',
+    id: 'jesus',
     title: 'Climb Christ the King',
     description: {
       en: 'Giant Jesus statue on Nho Mountain offering panoramic views of the city.',
@@ -66,13 +81,25 @@ export const ACTIVITIES: Activity[] = [
   },
 
   {
-    id: 'a4',
+    id: 'island',
     title: 'walk to the island',
     description: {
       en: 'Checking out Hon Ba Temple before the water gets high.',
       vi: 'Tham quan chùa Hon Ba trước khi nước dâng cao.'
     },
     image: './island.webp',
+    duration: '2 hours',
+    location: 'Bai Sau Area'
+  },
+
+  {
+    id: 'walk',
+    title: 'walk at the beach',
+    description: {
+      en: 'Checking out Hon Ba Temple before the water gets high.',
+      vi: 'Tham quan chùa Hon Ba trước khi nước dâng cao.'
+    },
+    image: '../assets/girls.jpg',
     duration: '2 hours',
     location: 'Bai Sau Area'
   }
@@ -152,7 +179,7 @@ export const PLACES: Place[] = [
       vi: ' Thưởng thức phần Schnitzel giòn tan kèm salad rau tươi, khoai tây chiên vàng ươm và một ly bia lạnh sảng khoái 🍺 '
     },
     address: '166 Phan Chu Trinh, Phường 2, Vũng Tàu 78000, Vietnam',
-   image: '../assets/german.png',
+   image: '../assets/german.webp',
     rating: 4.2,
 
     phoneNumber: '+84 353396330',
@@ -178,6 +205,24 @@ export const PLACES: Place[] = [
     openingHours: '10:00 - 23:00',
     coordinates: { lat: 10.358, lng: 107.065 }
   },
+
+  {
+    id: 'little',
+    name: 'Little Bar & Café',
+    category: 'coffee',
+    description: {
+      en: 'fave spot for retirees 👴👵✨',
+      vi: 'Địa điểm yêu thích dành cho người về hưu 👴👵✨'
+    },
+    address: '81 Phan Chu Trinh, Phường 2, Vũng Tàu,Vietnam',
+    image: '../assets/little.webp',
+    rating: 4.8,
+
+    phoneNumber: '0254 355 0909',
+    openingHours: '10:00 - 23:00',
+    coordinates: { lat: 10.3338582, lng: 107.0793904 }
+  },
+
   {
     id: 'soho',
     name: 'SOHO Coffee',
@@ -241,17 +286,17 @@ export const PLACES: Place[] = [
     image: '/WellnessHomes.jpg',
     rating: 4.6,
 
-    phoneNumber: '0254 355 0909',
-    openingHours: '10:00 - 23:00',
+    phoneNumber: '+84 908098138',
+    openingHours: '8:30 - 16:30',
    
-    coordinates: { lat: 10.3802043, lng: 107.091439 }
+    coordinates: { lat: 10.3739234, lng: 107.1211 }
   },
 
 
   
   
    {
-    id: 'p7',
+    id: 'soon',
     name: 'coming soon',
     category: 'nightlife',
     description: {
@@ -305,7 +350,7 @@ export const PLACES: Place[] = [
 
 
    {
-    id: 'p10',
+    id: 'coming',
     name: 'coming soon',
     category: 'massage',
     description: {
@@ -424,6 +469,43 @@ export const PLACES: Place[] = [
     coordinates: { lat: 10.3367394, lng: 10.3367394 }
   },
 
+
+  {
+    id: 'buffet',
+    name: 'Mê Buffet ',
+    category: 'restaurant',
+    description: {
+      en: 'They even catch the prawns right there and cook them at your table 🔥',
+      vi: 'Họ thậm chí còn bắt tôm ngay tại chỗ và chế biến ngay trước mặt bạn! 🔥'
+    },
+    address: '83QP+63 Vũng Tàu, Ba Ria - Vung Tau, Vietnam',
+   image: '../assets/buffet.webp',
+    rating: 4.8,
+
+    phoneNumber: '+84 339781689',
+    openingHours: '17:30 - 24:00',
+    coordinates: { lat: 10.3380182, lng: 107.0825588 }
+  },
+
+
+  {
+    id: 'lobster',
+    name: 'Hải sản tươi sống',
+    category: 'restaurant',
+    description: {
+      en: 'dining with a sea view 🌊👀🍽️',
+      vi: 'Thưởng thức bữa ăn với tầm nhìn ra biển 🌊👀🍽️'
+    },
+    address: '151C Thùy Vân, Phường Thắng Tam, Vũng Tàu, Vietnam',
+   image: '../assets/lobster.webp',
+    rating: 4.8,
+
+    phoneNumber: '+84 907379759',
+    openingHours: 'open 24 hours',
+    coordinates: { lat: 10.3385702, lng: 107.091529 }
+  },
+
+
   {
     id: 'bar',
     name: 'MK Bar',
@@ -439,6 +521,24 @@ export const PLACES: Place[] = [
     phoneNumber: '0254 355 0909',
     openingHours: '6:30 - 24:00',
     coordinates: { lat: 10.3424039, lng: 107.0738302 }
+  },
+
+
+  {
+    id: 'fish',
+    name: 'OC 34',
+    category: 'restaurant',
+    description: {
+      en: 'freshly grilled fish of your choice 🐟🔥',
+      vi: 'Cá nướng tươi ngon tùy chọn theo sở thích của bạn 🐟🔥'
+    },
+    address: '2 Hoàng Hoa Thám, Phường 3, Vũng Tàu, Vietnam',
+   image: '../assets/oc34.webp',
+    rating: 2.1,
+
+    phoneNumber: '+84 0000000',
+    openingHours: '17:30 - 24:00',
+    coordinates: { lat: 10.3422033, lng: 107.004658 }
   },
 
   
@@ -459,6 +559,24 @@ export const PLACES: Place[] = [
     openingHours: '06:30 - 22:00',
     coordinates: { lat: 10.348084, lng: 107.0722031 }
   },
+
+  {
+    id: 'corner',
+    name: 'Corner Bar',
+    category: 'nightlife',
+    description: {
+      en: 'the kind of place where it’s easy to strike up a conversation with the person sitting next to you✨',
+      vi: ' Đây là kiểu nơi mà bạn dễ dàng bắt chuyện với người ngồi cạnh mình. '
+    },
+    address: '51a Phan Chu Trinh, Phường 2, Vũng Tàu, Bà Rịa - Vũng Tàu 999999, Vietnam',
+   image: '../assets/cornerBar.webp',
+    rating: 4.7,
+
+    phoneNumber: '+84 835689154',
+    openingHours: '06:30 - 22:00',
+    coordinates: { lat: 10.3371052, lng: 107.0780744 }
+  },
+
 
 
   {
@@ -505,7 +623,7 @@ export const PLACES: Place[] = [
       en: '📄 Get your documents printed ⚡️ quickly! 🖨️',
       vi: ' 📄 In tài liệu của bạn nhanh chóng ⚡️! 🖨️ '
     },
-    address: ' Võ Thị Sáu Vũng Tàu, Vietnam',
+    address: ' 181 Võ Thị Sáu Vũng Tàu, Vietnam',
    image: '../assets/copy.png',
     rating: 4.7,
 
@@ -513,6 +631,98 @@ export const PLACES: Place[] = [
     openingHours: '08:30 - 22:00',
     coordinates: { lat: 10.3399814, lng: 107.0877767 }
   },
+
+
+   {
+    id: 'gold',
+    name: 'Tiệm Vàng Kim Minh- Hoàng Ngọc',
+    category: 'services',
+    description: {
+      en: '💰 Best 💱 money exchange rate 📈 in town 🏦 💯',
+      vi: ' 💰 Tỷ giá hối đoái tốt nhất 💱 trong thành phố 🏦 💯 '
+    },
+    address: ' 171A Nam Kỳ Khởi Nghĩa, Phường 3, Vũng Tàu Vietnam',
+   image: '../assets/money.webp',
+    rating: 4.7,
+
+    phoneNumber: '+84 918582810',
+    openingHours: '08:30 - 22:00',
+    coordinates: { lat: 10.3496053, lng: 107.0811429 }
+  },
+
+
+  {
+    id: 'scooter',
+    name: 'Scooter Rental',
+    category: 'services',
+    description: {
+      en: '🚲⚡️ or 🛴? Hit me up! 📱✨',
+      vi: ' 🚲⚡️ hay 🛴? Liên hệ với tôi nhé! 📱✨ '
+    },
+    address: ' Vũng Tàu Vietnam',
+   image: '../assets/scooter.webp',
+    rating: 4.8,
+
+    phoneNumber: '+84 834316488',
+    openingHours: '09:00 - 20:00',
+    coordinates: { lat: 110.4036342, lng: 106.9582214 }
+  },
+
+   {
+    id: 'century',
+    name: 'Century Bar',
+    category: 'nightlife',
+    description: {
+      en: 'Great bar... with a super chill vibe 😎 Play pool with the ladies 🎱👯‍♀️',
+      vi: ' Quán bar tuyệt vời... với không khí cực kỳ thư giãn 😎 Chơi bi-a cùng các cô gái 🎱👯‍♀️ '
+    },
+    address: ' 6 Lý Tự Trọng, Phường 1, Vũng Tàu, Vietnam',
+   image: '../assets/century.webp',
+    rating: 4.1,
+
+    phoneNumber: '+84 937 354 111',
+    openingHours: '18:00 - 01:00',
+    coordinates: { lat: 10.3474413, lng: 107.0725678 }
+  },
+
+  {
+    id: 'numptys',
+    name: 'Numpty Bar',
+    category: 'nightlife',
+    description: {
+      en: '🍺 Awesome bar! 🎉 Great selection of beers 🍻 and sports ⚽️🏈 on TV 📺',
+      vi: ' 🍺 Quán bar tuyệt vời! 🎉 Nhiều loại bia ngon 🍻 và các chương trình thể thao ⚽️🏈 được chiếu trên TV 📺 '
+    },
+    address: ' 130a Phan Chu Trinh, Phường 2, Vũng Tàu,Vietnam',
+   image: '../assets/numptys.webp',
+    rating: 4.4,
+
+    phoneNumber: '+84 0908748532',
+    openingHours: '18:00 - 01:00',
+    coordinates: { lat: 110.3347364, lng: 107.079108 }
+  },
+
+
+  {
+    id: 'downunder',
+    name: 'Down Under Bar',
+    category: 'nightlife',
+    description: {
+      en: '🍺 Popular spot where retired expats love to chill & drink! 🌴👴👵🍷',
+      vi: '🍺 Địa điểm nổi tiếng nơi những người nước ngoài đã nghỉ hưu thích đến thư giãn và thưởng thức đồ uống! 🌴👴👵🍷 '
+    },
+    address: ' 51i Phan Chu Trinh, Phường 2, Vũng Tàu,Vietnam',
+   image: '../assets/downunder.webp',
+    rating: 4.3,
+
+    phoneNumber: '+84 0918284839',
+    openingHours: '07:00 - 24:00',
+    coordinates: { lat: 10.3366774, lng:107.0785399 }
+  },
+
+
+
+
 
 
  

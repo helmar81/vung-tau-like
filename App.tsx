@@ -59,18 +59,20 @@ const AppContent: React.FC = () => {
         </nav>
       )}
 
-      {/* Pages */}
-      <Routes>
-        <Route path="/" element={<Home t={t} lang={lang} onViewDetails={(id) => navigate(`/details/${id}`)} />} />
-        <Route path="/get-started" element={<GetStarted t={t} lang={lang} />} />
-        <Route path="/guide" element={<Guide t={t} lang={lang} onCategoryClick={(type) => navigate(`/guide/${type}`)} />} />
-        <Route path="/guide/:categoryType" element={<CategoryList t={t} lang={lang} />} />
-        <Route path="/details/:placeId" element={<PlaceDetail lang={lang} t={t} />} />
-        <Route path="/ai" element={<AIChat t={t} lang={lang} />} />
-        
-        {/* Corrected Line below: */}
-        <Route path="/todo" element={<ToDo t={t} lang={lang} />} />
-      </Routes>
+      {/* ✅ ACCESSIBILITY FIX: Wrapped Routes in <main> */}
+      <main>
+        <Routes>
+          <Route path="/" element={<Home t={t} lang={lang} onViewDetails={(id) => navigate(`/details/${id}`)} />} />
+          <Route path="/get-started" element={<GetStarted t={t} lang={lang} />} />
+          <Route path="/guide" element={<Guide t={t} lang={lang} onCategoryClick={(type) => navigate(`/guide/${type}`)} />} />
+          <Route path="/guide/:categoryType" element={<CategoryList t={t} lang={lang} />} />
+          <Route path="/details/:placeId" element={<PlaceDetail lang={lang} t={t} />} />
+          <Route path="/ai" element={<AIChat t={t} lang={lang} />} />
+          
+          {/* Corrected Line below: */}
+          <Route path="/todo" element={<ToDo t={t} lang={lang} />} />
+        </Routes>
+      </main>
 
       {/* Persistent Bottom Navigation */}
       <BottomNav translations={t} />
