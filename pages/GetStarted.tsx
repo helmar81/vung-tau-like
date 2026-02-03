@@ -122,3 +122,6 @@ export const GetStarted: React.FC<GetStartedProps> = ({ t, lang }) => {
     </div>
   );
 };
+
+export default GetStarted;
+

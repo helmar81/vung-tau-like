@@ -163,3 +163,6 @@ export const PlaceDetail: React.FC<PlaceDetailProps> = ({ lang, t }) => {
     </div>
   );
 };
+
+export default PlaceDetail;
+

@@ -98,3 +98,6 @@ export const AIChat: React.FC<AIChatProps> = ({ t, lang }) => {
     </div>
   );
 };
+
+export default AIChat;
+

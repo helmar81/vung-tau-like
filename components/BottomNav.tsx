@@ -141,3 +141,6 @@ export const BottomNav: React.FC<{ translations: Translation }> = ({
     </>
   );
 };
+
+export default BottomNav;
+

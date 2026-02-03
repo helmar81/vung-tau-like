@@ -2,70 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
     <link rel="icon" type="image/png" href="/icons/icon-512.png" />
-
     <title>Vung Tau Like</title>
 
-    <meta
-      name="description"
-      content="Experience Vung Tau like a local with our curated guides"
-    />
+    <meta name="description" content="Experience Vung Tau like a local with our curated guides" />
     <meta name="theme-color" content="#2563EB" />
     <meta name="author" content="Helmar Baechle" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Vung Tau Like" />
-    <meta
-      property="og:description"
-      content="Discover the lovely seaside town in Vietnam"
-    />
-    <meta
-      property="og:image"
-      content="https://vungtaulike.web.app/vt2.jpg"
-    />
+    <meta property="og:description" content="Discover the lovely seaside town in Vietnam" />
+    <meta property="og:image" content="https://vungtaulike.web.app/vt2.jpg" />
     <meta property="og:url" content="https://vungtaulike.web.app/" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Vung Tau Like" />
-    <meta
-      name="twitter:description"
-      content="Discover the lovely seaside town in Vietnam"
-    />
-    <meta
-      name="twitter:image"
-      content="https://vungtaulike.web.app/vt2.jpg"
-    />
+    <meta name="twitter:description" content="Discover the lovely seaside town in Vietnam" />
+    <meta name="twitter:image" content="https://vungtaulike.web.app/vt2.jpg" />
 
     <meta name="google-site-verification" content="ikch8cJutwjQEDY7yMGEGLOSFRBKDCUl7kCT_ZneM8U" />
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css"
-  media="print"
-  onload="this.media='all'"
-/>
-
-
-    <!-- LCP Image -->
-    <link
-      rel="preload"
-      as="image"
-      href="/vt2.jpg"
-      type="image/jpg"
-      fetchpriority="high"
-    />
-
-    <!-- Fonts -->
+    <!-- Preconnects (critical for PageSpeed) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
 
+    <!-- LCP Image (AVIF) -->
+    <link rel="preload" as="image" href="/assets/vt3.avif" fetchpriority="high" />
+
+    <!-- Preload top 4 above-the-fold images -->
+    <link rel="preload" as="image" href="/assets/khot14.webp" />
+    <link rel="preload" as="image" href="/assets/german.webp" />
+    <link rel="preload" as="image" href="/assets/little.webp" />
+    <link rel="preload" as="image" href="/assets/soho.webp" />
+
+    <!-- Fonts -->
     <link
       rel="preload"
       as="style"
@@ -81,7 +56,6 @@
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#2563EB" />
   </head>
 
   <body>
@@ -90,13 +64,12 @@
     <!-- App -->
     <script type="module" src="/index.tsx"></script>
 
-    <!-- Analytics (delayed) -->
+    <!-- Analytics (delayed load) -->
     <script>
       window.addEventListener("load", () => {
         setTimeout(() => {
           const s = document.createElement("script");
-          s.src =
-            "https://www.googletagmanager.com/gtag/js?id=G-5H7ENCJP52";
+          s.src = "https://www.googletagmanager.com/gtag/js?id=G-5H7ENCJP52";
           s.async = true;
           document.head.appendChild(s);
 

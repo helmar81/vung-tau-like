@@ -111,28 +111,28 @@ export const CATEGORIES: Category[] = [
     icon: 'utensils',
     type: 'restaurant',
     label: { en: 'Restaurants', vi: 'Nhà hàng' },
-    image: undefined
+    image: ''
   },
   {
     id: '2',
     icon: 'coffee',
     type: 'coffee',
     label: { en: 'Coffee Shops', vi: 'Quán cà phê' },
-    image: undefined
+    image: ''
   },
   {
     id: '3',
     icon: 'briefcase',
     type: 'services',
     label: { en: 'Services', vi: 'Dịch vụ' },
-    image: undefined
+    image: ''
   },
   {
     id: '4',
     icon: 'moon',
     type: 'nightlife',
     label: { en: 'Nightlife', vi: 'Giải trí đêm' },
-    image: undefined
+    image: ''
   },
   {
     id: '5',
@@ -144,10 +144,10 @@ export const CATEGORIES: Category[] = [
 
   {
     id: '6',
-    icon: 'Bed',
+    icon: 'bed',
     type: 'accomodation',
     label: { en: 'Accomodation', vi: 'Chỗ ở' },
-    image: undefined
+    image:  ''
   }
 ];
 

@@ -2,6 +2,8 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { PLACES, CATEGORIES } from "../constants";
 import { Translation, Language } from "../types";
+
+import { categoryIcons } from "../icons/categoryIcons";
 import {
   ArrowLeft,
   Star,
@@ -24,15 +26,20 @@ export const CategoryList: React.FC<CategoryListProps> = ({ t, lang }) => {
 
   return (
     <div className="pt-24 pb-24 px-6">
-      <div className="flex items-center space-x-3 mb-6">
+      <div className="flex items-center space-x-4 mb-8">
         <button
           onClick={() => navigate("/guide")}
-          className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-ocean"
+          className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-ocean hover:bg-gray-50 transition-colors"
         >
           <ArrowLeft size={20} />
         </button>
 
-        <h1 className="text-2xl font-bold text-deep uppercase tracking-tight">
+        {/* This div renders the icon from your categoryIcons.tsx file */}
+        <div className="text-ocean flex items-center justify-center">
+          {categoryType && categoryIcons[categoryType]}
+        </div>
+
+        <h1 className="text-2xl font-bold text-deep uppercase tracking-tight leading-none">
           {categoryInfo?.label[lang] || t.guide}
         </h1>
       </div>
@@ -88,3 +95,5 @@ export const CategoryList: React.FC<CategoryListProps> = ({ t, lang }) => {
     </div>
   );
 };
+
+export default CategoryList;

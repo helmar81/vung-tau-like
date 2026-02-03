@@ -29,3 +29,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ current, onS
     </div>
   );
 };
+
+export default LanguageSwitcher;
+
+

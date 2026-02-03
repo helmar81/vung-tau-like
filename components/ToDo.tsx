@@ -51,3 +51,6 @@ export const ToDo: React.FC<ToDoProps> = ({ t, lang }) => {
     </div>
   );
 };
+
+export default ToDo;
+

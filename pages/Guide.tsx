@@ -50,6 +50,7 @@ export const Guide: React.FC<GuideProps> = ({
             >
               {categoryIcons[cat.icon]}
             </div>
+            
 
             {/* Label */}
             <span
@@ -84,3 +85,6 @@ export const Guide: React.FC<GuideProps> = ({
     </div>
   );
 };
+
+export default Guide;
+
